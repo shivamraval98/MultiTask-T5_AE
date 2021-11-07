@@ -1,3 +1,8 @@
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://github.com/shivamraval98/MultiTask-T5_AE/LICENSE) [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg?style=plastic)](https://arxiv.org/pdf/2109.05815.pdf)
 
 # MultiTask-T5_AE :book:
+[Exploring a Unified Sequence-To-Sequence Transformer for Medical Product Safety Monitoring in Social Media]() accepted to be published in EMNLP 2021 Findings track explores the sequence-to-sequence transformers to detect and extract Adverse Events (AE) from various source for medical product safety monitoring.  
+Adverse Events (AE) are harmful events resulting from the use of medical products. Although social media may be crucial for early AE detection, the sheer scale of this data makes it logistically intractable to analyze using human agents, with NLP representing the only low-cost and scalable alternative. In this paper, we frame AE Detection and Extraction as a sequence-to-sequence problem using the T5 model architecture and achieve strong performance improvements over competitive baselines on several English benchmarks (F1 = 0.71, 12.7% relative improvement for AE Detection; Strict F1 = 0.713, 12.4% relative improvement for AE Extraction).
+
+Given an input sequence of words that potentially contains drug, dosage and AE mentions, we frame the AE detection (i.e. binary classification) and extraction (i.e. span detection) tasks as seq-to-seq problems, further finetuning T5 to generate Y, which is either the classification label or the text span with the AE. The example of prefixes used is shown in the figure below:
+
