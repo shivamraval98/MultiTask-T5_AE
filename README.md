@@ -57,3 +57,18 @@ This dataset is a manually curated benchmark based on tweets. It is used exclusi
 | Dataset                                                            | Total  | Positive | Negative |
 |--------------------------------------------------------------------|--------|----------|----------|
 | WEB-RADR (AE Detection and AE Extraction)<br /> <br /> Test (100%) | 57,481 | 1,056    | 56,425   |
+
+
+## Installation
+#### 1. Setup Basic virtualenv 
+```
+python3 -m venv t5_ade
+source t5_ade/bin/activate
+```
+
+#### 2. Install Requirements
+```
+cd ae-detect
+pip install -r requirements.txt
+```
+
