@@ -98,10 +98,11 @@ There are couple of options for running the multi-task setting which are describ
 
 ## How to Cite
 ```bibtex
-@article{raval2021exploring,
+@inproceedings{raval2021exploring,
   title={Exploring a Unified Sequence-To-Sequence Transformer for Medical Product Safety Monitoring in Social Media},
   author={Raval, Shivam and Sedghamiz, Hooman and Santus, Enrico and Alhanai, Tuka and Ghassemi, Mohammad and Chersoni, Emmanuele},
-  journal={arXiv preprint arXiv:2109.05815},
-  year={2021}
+  booktitle={The 2021 Conference on Empirical Methods in Natural Language Processing},
+  year={2021},
+  organization={Association for Computational Linguistics (ACL)}
 }
 ```
