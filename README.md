@@ -22,8 +22,8 @@ Given an input sequence of words that potentially contains drug, dosage and AE m
 The datasets used for experimentation is mentioned below:
 
 #### 1. SMM4H
-This dataset was introduced for the Shared Tasks on AE in the Workshop on Social Media Mining for Health Applications (SMM4H) (Weissenbacher et al., 2018). The dataset is composed of Twitter posts, typically short, informal texts with non-standard ortography, and it contains annotations for both detection (i.e., Task 1, classification) and extraction (i.e., Task 2, NER) of Adverse Events. The preparation of AE Detection dataset for SMM4H Task 1 requires SMM4H19_Task1.csv file in the ae-detect/data/datasets/SMM4H_Task1/ folder. (column names: tweet_id, tweet, label). Similarly as Task 1 dataset, the importer function for Task 2 expects a file SMM4H19_Task2.csv in the ae-detect/data/datasets/SMM4H_Task2/ folder. (column names: tweet_id,begin,end,type,extraction,drug,tweet,meddra_code,meddra_term <br />
-SMM4H Task 2 Dataset Splits: [/src/data/splits/SMM4H_Task2](https://github.com/shivamraval98/MultiTask-T5_AE/data/splits/SMM4H_Task2)
+This dataset was introduced for the Shared Tasks on AE in the Workshop on Social Media Mining for Health Applications (SMM4H) (Weissenbacher et al., 2018). The dataset is composed of Twitter posts, typically short, informal texts with non-standard ortography, and it contains annotations for both detection (i.e., Task 1, classification) and extraction (i.e., Task 2, NER) of Adverse Events. The preparation of AE Detection dataset for SMM4H Task 1 requires SMM4H19_Task1.csv file in the /src/data/datasets/SMM4H_Task1/ folder. (column names: tweet_id, tweet, label). Similarly as Task 1 dataset, the importer function for Task 2 expects a file SMM4H19_Task2.csv in the /src/data/datasets/SMM4H_Task2/ folder. (column names: tweet_id,begin,end,type,extraction,drug,tweet,meddra_code,meddra_term <br />
+SMM4H Task 2 Dataset Splits: [/src/data/splits/SMM4H_Task2](https://github.com/shivamraval98/MultiTask-T5_AE/src/data/splits/SMM4H_Task2)
 
 | Dataset                                                                                                                           | Total                                                 | Positive                                        | Negative                                              |
 |-----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|-------------------------------------------------|-------------------------------------------------------|
@@ -31,9 +31,9 @@ SMM4H Task 2 Dataset Splits: [/src/data/splits/SMM4H_Task2](https://github.com/s
 | SMM4H Task 2 (AE Detection, AE Extraction and Drug Extraction)<br /> <br /> Train (60%) <br /> Validation (20%) <br /> Test (20%) | 2,276 <br /> <br /> 1,365 <br /> 455 <br /> 456       | 1300 <br /> <br /> 780 <br /> 260 <br /> 260    | 976 <br /> <br /> 585 <br /> 195 <br /> 196           |
 
 
-#### 2. CADEC [/ae-detect/data/importer/CADEC_loader.py](https://github.platforms.engineering/GMMGZ/T5_ADE/blob/main/ae-detect/data/importer/CADEC_loader.py)
-CADEC contains 1,250 medical forum posts annotated with patient-reported AEs. In this dataset, texts are long and informal, often deviating from English syntax and punctuation rules. Forum posts may contain more than one AE. For our goals, we adopted the training, validation, and test splits proposed by Dai et al. (2020). The importer for CADEC expects a zip file CADEC.zip in the ae-detect/data/datasets/CADEC/ folder and the dataset is available at: https://data.csiro.au/collections/collection/CIcsiro:10948/SQcadec/RP1/RS25/RORELEVANCE/STsearch-by-keyword/RI1/RT1/ (download the CADEC.v2.zip)  <br />
-Dataset Splits: [/ae-detect/data/splits/CADEC](https://github.platforms.engineering/GMMGZ/T5_ADE/tree/main/ae-detect/data/splits/CADEC)
+#### 2. CADEC
+CADEC contains 1,250 medical forum posts annotated with patient-reported AEs. In this dataset, texts are long and informal, often deviating from English syntax and punctuation rules. Forum posts may contain more than one AE. For our goals, we adopted the training, validation, and test splits proposed by Dai et al. (2020). The importer for CADEC expects a zip file CADEC.zip in the /src/data/datasets/CADEC/ folder and the dataset is available at: https://data.csiro.au/collections/collection/CIcsiro:10948/SQcadec/RP1/RS25/RORELEVANCE/STsearch-by-keyword/RI1/RT1/ (download the CADEC.v2.zip)  <br />
+Dataset Splits: [/src/data/splits/CADEC](https://github.com/shivamraval98/MultiTask-T5_AE/src/data/splits/CADEC)
 
 | Dataset                                                                                                                           | Total                                         | Positive                                      | Negative                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|-----------------------------------------------|------------------------------------------|
@@ -41,8 +41,8 @@ Dataset Splits: [/ae-detect/data/splits/CADEC](https://github.platforms.engineer
 
 
 
-#### 3. ADE Corpus v2 [/ae-detect/data/importer/ADECorpus_loader.py](https://github.platforms.engineering/GMMGZ/T5_ADE/blob/main/ae-detect/data/importer/ADECorpus_loader.py)
-This dataset (Gurulingappa et al., 2012) contains case reports extracted from MEDLINE and it was used for multi-task training, as it contains annotations for all tasks in Table 1, i.e. drugs, dosage, AE detection and extraction. Splits are stratified, to maintain an equal ratio of positive and negative examples.This dataset is automatically prepared by the code by loading the dataset from the huggingface datasets package.
+#### 3. ADE Corpus v2 
+This dataset (Gurulingappa et al., 2012) contains case reports extracted from MEDLINE and it was used for multi-task training, as it contains annotations for all tasks: drugs, dosage, AE detection and extraction. Splits are stratified, to maintain an equal ratio of positive and negative examples.This dataset is automatically prepared by the code by loading the dataset from the huggingface datasets package.
 
 | Dataset                                                                                                    | Total                                                 | Positive                                            | Negative                                              |
 |------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|-----------------------------------------------------|-------------------------------------------------------|
@@ -51,8 +51,8 @@ This dataset (Gurulingappa et al., 2012) contains case reports extracted from ME
 | ADE Corpus v2 (Drug Extraction) <br /> <br/> Train (60%) <br /> Validation (20%) <br /> Test (20%)         | 7,100  <br /> <br /> 4,260 <br /> 1,420 <br /> 1,420  | 7,100 <br /> <br /> 4,260 <br /> 1,420 <br /> 1,420 | -                                                     |
 | ADE Corpus v2 (Drug Dosage Extraction) <br /> <br /> Train (60%) <br /> Validation (20%) <br /> Test (20%) | 279 <br /> <br /> 167 <br /> 56 <br /> 56             | -                                                   | -                                                     |
 
-#### 4. WEB-RADR [/ae-detect/data/importer/WEBRADR_loader.py](https://github.platforms.engineering/GMMGZ/T5_ADE/blob/main/ae-detect/data/importer/WEBRADR_loader.py)
-This dataset is a manually curated benchmark based on tweets. It is used exclusively to test the performance of the multi-task models, as it was originally introduced only for testing purposes [(Dietrich et al., 2020)](https://link.springer.com/content/pdf/10.1007/s40264-020-00912-9.pdf). The importer for WEB-RADR expects the file WEB_RADR.csv in the folder ae-detect/data/datasets/WEB_RADR/. (column names: tweet_id, tweet, label, extraction)
+#### 4. WEB-RADR 
+This dataset is a manually curated benchmark based on tweets. It is used exclusively to test the performance of the multi-task models, as it was originally introduced only for testing purposes [(Dietrich et al., 2020)](https://link.springer.com/content/pdf/10.1007/s40264-020-00912-9.pdf). The importer for WEB-RADR expects the file WEB_RADR.csv in the folder /src/data/datasets/WEB_RADR/. (column names: tweet_id, tweet, label, extraction)
 
 | Dataset                                                            | Total  | Positive | Negative |
 |--------------------------------------------------------------------|--------|----------|----------|
