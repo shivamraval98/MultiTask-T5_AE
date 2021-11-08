@@ -61,14 +61,47 @@ This dataset is a manually curated benchmark based on tweets. It is used exclusi
 
 ## Installation
 #### 1. Setup Basic virtualenv 
-```
+```python
 python3 -m venv t5_ade
 source t5_ade/bin/activate
 ```
 
 #### 2. Install Requirements
-```
+```bash
 cd ae-detect
 pip install -r requirements.txt
 ```
 
+## Usage
+#### 1. Running Baseline BERT Models:
+```python
+#Train Models
+python train_baseline.py
+#Evaluate Models
+python eval_baseline.py
+```
+ More details of the parameters that can be changed are mentioned in the train_baseline.py.
+ 
+ #### 2. Running T5 Models:
+ ```python
+ # Single Task T5 Model
+ python t5_train.py
+ 
+ #Multi-Task T5 Model
+ python t5_multi_task_train.py
+
+#T5 Evaluation
+python t5_eval.py
+ ```
+There are couple of options for running the multi-task setting which are described in the script. The T5 model can be trained on Task Balancing (TB) or Task plus Dataset Balancing (TDB) approach for Proportional Mixing (PM) or Temperature Scaling (TS) strategies. For evaluation, the test set and the trained model path information can be changed in t5_eval.py script.
+
+
+## How to Cite
+```bibtex
+@article{raval2021exploring,
+  title={Exploring a Unified Sequence-To-Sequence Transformer for Medical Product Safety Monitoring in Social Media},
+  author={Raval, Shivam and Sedghamiz, Hooman and Santus, Enrico and Alhanai, Tuka and Ghassemi, Mohammad and Chersoni, Emmanuele},
+  journal={arXiv preprint arXiv:2109.05815},
+  year={2021}
+}
+```
