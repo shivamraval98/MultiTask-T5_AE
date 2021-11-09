@@ -6,6 +6,8 @@ Adverse Events (AE) are harmful events resulting from the use of medical product
 
 Given an input sequence of words that potentially contains drug, dosage and AE mentions, we frame the AE detection (i.e. binary classification) and extraction (i.e. span detection) tasks as seq-to-seq problems, further finetuning T5 to generate Y, which is either the classification label or the text span with the AE. The example of prefixes used is shown in the figure below:
 
+![T5_AE](T5_AE.png)
+
 ## Table of Contents
 [Datasets](#datasets)
 
