@@ -68,6 +68,10 @@ The SMM4H Twitter AE French dataset was introduced in the SMM4H20 (https://www.a
 |--------------------------------------------------------------------|--------|----------|----------|
 | SMM4H-French (AE Detection)<br /> <br /> Test (100%) | 1,941 | 31    | 1,910   |
 
+After all the datastes being placed in their respective folders, the following command can be executed to load and prepare all the datasets for the model input.
+```python
+python src/prep_data,py
+```
 
 
 ## Installation
